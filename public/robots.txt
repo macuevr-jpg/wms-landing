@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wms-servic.netlify.app/sitemap.xml
