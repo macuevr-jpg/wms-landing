@@ -1,17 +1,11 @@
 import React from 'react';
+import Navbar from './Navbar'; // 👈 добавлено
 import { Link } from 'react-router-dom';
 
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800">
-      
-      {/* 🔹 Меню навігації */}
-      <nav className="bg-gray-900 text-white py-4">
-        <div className="container mx-auto flex justify-center space-x-6">
-          <Link to="/" className="hover:text-yellow-400">Головна</Link>
-          <Link to="/about" className="hover:text-yellow-400">Про компанію</Link>
-        </div>
-      </nav>
+      <Navbar /> {/* 👈 меню вынесено сюда */}
 
       {/* 🔹 Hero Section */}
       <section className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-20 px-6 text-center">
@@ -40,7 +34,7 @@ export default function App() {
         </div>
         <div>
           <h3 className="text-xl font-semibold mb-2">⚙️ Універсальна сумісність</h3>
-          <p>Підходять для верстатів SCM, Biesse, Altendorf, Holzmann та їх аналогів.</p>
+          <p>Підходять для верстатів SCM, Biesse, KDT, Altendorf, Holzmann та шнших верстатів.</p>
         </div>
         <div>
           <h3 className="text-xl font-semibold mb-2">🧱 Міцна конструкція</h3>
