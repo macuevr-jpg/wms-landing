@@ -1,11 +1,12 @@
 import React from 'react';
-import Navbar from './Navbar'; // 👈 добавлено
+import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800">
-      <Navbar /> {/* 👈 меню вынесено сюда */}
+    <div className="min-h-screen bg-gray-50 text-gray-800 animate-fadeIn">
+      {/* 🔹 Меню */}
+      <Navbar />
 
       {/* 🔹 Hero Section */}
       <section className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-20 px-6 text-center">
@@ -26,7 +27,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 🔹 Features */}
+      {/* 🔹 Особливості */}
       <section className="py-16 px-6 max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center">
         <div>
           <h3 className="text-xl font-semibold mb-2">🎯 Точне фіксування</h3>
@@ -34,7 +35,7 @@ export default function App() {
         </div>
         <div>
           <h3 className="text-xl font-semibold mb-2">⚙️ Універсальна сумісність</h3>
-          <p>Підходять для верстатів SCM, Biesse, KDT, Altendorf, Holzmann та шнших верстатів.</p>
+          <p>Підходять для верстатів SCM, Biesse, KDT, Altendorf, Holzmann та інших аналогів.</p>
         </div>
         <div>
           <h3 className="text-xl font-semibold mb-2">🧱 Міцна конструкція</h3>
@@ -42,7 +43,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 🔹 Gallery */}
+      {/* 🔹 Галерея */}
       <section className="bg-gray-100 py-16 px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">Фото наших притисків</h2>
         <p className="text-gray-600 mb-8">Реальні зображення ексцентрикових притисків виробництва WMS Service.</p>
@@ -55,43 +56,80 @@ export default function App() {
         </div>
       </section>
 
-      {/* 🔹 CTA */}
+      {/* 🔹 CTA — Контакти */}
       <section className="bg-yellow-400 text-gray-900 py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold mb-4">Хочете дізнатися більше або зробити замовлення?</h2>
-        <p className="mb-6">Телефонуйте або залишайте заявку — допоможемо підібрати притиск під ваш верстат.</p>
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
-  {/* Основной телефон */}
-  <a
-    href="tel:+380501471036"
-    className="inline-flex items-center gap-2 bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl hover:bg-gray-800 transition"
-  >
-    📞 050-147-10-36
-  </a>
+        <h2 className="text-3xl font-bold mb-4">
+          Хочете дізнатися більше або зробити замовлення?
+        </h2>
+        <p className="mb-6">
+          Телефонуйте або залишайте заявку — допоможемо підібрати притиск під ваш верстат.
+        </p>
 
-  {/* Телефон с Viber и Telegram */}
-  <div className="inline-flex flex-col items-center sm:items-start">
-    <a
-      href="tel:+380684324203"
-      className="inline-flex items-center gap-2 bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl hover:bg-gray-800 transition"
-    >
-      💬 068-432-42-03
-    </a>
-    <div className="flex justify-center sm:justify-start gap-3 mt-2">
-      <a
-        href="viber://chat?number=%2B380684324203"
-        className="text-gray-700 hover:text-purple-500 transition font-medium"
-      >
-        📱 Viber
-      </a>
-      <span className="text-gray-500">•</span>
-      <a
-        href="https://t.me/+380684324203"
-        className="text-gray-700 hover:text-blue-500 transition font-medium"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ✈️ Telegram
-      </a>
+        <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
+            {/* Основний телефон */}
+            <a
+              href="tel:+380501471036"
+              className="inline-flex items-center gap-2 bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl shadow-lg hover:shadow-yellow-300/40 hover:shadow-md transition transform hover:scale-105 hover:text-yellow-300"
+            >
+              <span className="text-red-500 text-lg">📞</span> 050-147-10-36
+            </a>
+
+            {/* Телефон з Viber і Telegram */}
+            <a
+              href="tel:+380684324203"
+              className="inline-flex items-center gap-2 bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl shadow-lg hover:shadow-purple-400/40 hover:shadow-md transition transform hover:scale-105 hover:text-yellow-300"
+            >
+              <span className="text-purple-500 text-lg">💬</span> 068-432-42-03
+            </a>
+          </div>
+
+          {/* Іконки месенджерів */}
+          <div className="flex justify-center gap-6 mt-4">
+            {/* Viber */}
+            <a
+              href="viber://chat?number=%2B380684324203"
+              className="flex items-center gap-2 text-gray-800 hover:text-purple-600 transition font-medium"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-6 h-6">
+                <path
+                  fill="#7b519d"
+                  d="M36 2H12C6.477 2 2 6.477 2 12v24c0 5.523 4.477 10 10 10h24c5.523 0 10-4.477 10-10V12c0-5.523-4.477-10-10-10z"
+                />
+                <path
+                  fill="#fff"
+                  d="M35.062 26.938a9.952 9.952 0 0 1-5.607-1.72c-.92-.6-1.955-.27-2.28.48l-.57 1.19c-.25.52-.92.66-1.43.36-1.46-.83-3.01-1.91-4.57-3.47s-2.64-3.11-3.47-4.57c-.3-.51-.16-1.18.36-1.43l1.19-.57c.75-.32 1.08-1.36.48-2.28A9.952 9.952 0 0 1 21.06 12H12c-.55 0-1 .45-1 1v3c0 8.837 7.163 16 16 16h3c.55 0 1-.45 1-1v-2.062z"
+                />
+              </svg>
+              Viber
+            </a>
+
+            {/* Telegram */}
+            <a
+              href="https://t.me/+380684324203"
+              className="flex items-center gap-2 text-gray-800 hover:text-blue-500 transition font-medium"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" className="w-6 h-6">
+                <circle cx="120" cy="120" r="120" fill="#37aee2" />
+                <path
+                  fill="#fff"
+                  d="M190 69l-23 109c-2 9-7 11-14 7l-38-28-18 18c-2 2-3 3-6 3l2-40 72-65c3-2-1-3-5-1l-89 56-39-12c-8-3-8-8 2-12l152-58c7-3 14 1 11 13z"
+                />
+              </svg>
+              Telegram
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 🔹 Footer */}
+      <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-6 text-center text-sm shadow-inner border-t border-gray-700 animate-fadeIn">
+        <p className="transition duration-300 hover:text-yellow-400 hover:drop-shadow-[0_0_6px_rgba(255,255,150,0.5)]">
+          © {new Date().getFullYear()} WMS Service
+        </p>
+      </footer>
     </div>
-  </div>
-</div>
+  );
+}
