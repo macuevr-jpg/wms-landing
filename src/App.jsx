@@ -1,10 +1,27 @@
-import React from 'react';
-import Navbar from './Navbar';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from "react";
+import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 export default function App() {
+  // 🔹 Плавное появление карточек при прокрутке
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fadeIn");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll(".fade-in-section").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 animate-fadeIn">
+    <div className="min-h-screen bg-gray-50 text-gray-800">
       {/* 🔹 Меню */}
       <Navbar />
 
@@ -28,25 +45,48 @@ export default function App() {
       </section>
 
       {/* 🔹 Особливості */}
-      <section className="py-16 px-6 max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center">
-        <div>
-          <h3 className="text-xl font-semibold mb-2">🎯 Точне фіксування</h3>
-          <p>Притиски забезпечують стабільне утримання заготовки без зсуву — чистий і точний розкрій.</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold mb-2">⚙️ Універсальна сумісність</h3>
-          <p>Підходять для верстатів SCM, Biesse, KDT, Altendorf, Holzmann та інших аналогів.</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold mb-2">🧱 Міцна конструкція</h3>
-          <p>Виготовлені з високоякісного металу з посиленою пружиною — довговічність і надійність у роботі.</p>
-        </div>
+      <section className="py-16 px-6 max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-center">
+        {[
+          {
+            emoji: "🎯",
+            title: "Точне фіксування",
+            text: "Притиски забезпечують стабільне утримання заготовки без зсуву — чистий і точний розкрій.",
+          },
+          {
+            emoji: "⚙️",
+            title: "Універсальна сумісність",
+            text: "Підходять для верстатів SCM, Biesse, KDT, Altendorf, Holzmann та інших аналогів.",
+          },
+          {
+            emoji: "🧱",
+            title: "Міцна конструкція",
+            text: "Виготовлені з високоякісного металу з посиленою пружиною — довговічність і надійність у роботі.",
+          },
+          {
+            emoji: "🧩",
+            title: "Виготовлення нестандартних розмірів",
+            text: "Ми приймаємо замовлення на виготовлення ексцентрикових притисків під індивідуальні параметри — діаметр, висоту, форму основи чи кріплення. Це дозволяє адаптувати інструмент до будь-якої моделі верстату або особливостей вашого виробництва.",
+          },
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="fade-in-section bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition transform hover:-translate-y-2 opacity-0"
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
+            <h3 className="text-xl font-semibold mb-2">
+              {item.emoji} {item.title}
+            </h3>
+            <p>{item.text}</p>
+          </div>
+        ))}
       </section>
 
       {/* 🔹 Галерея */}
       <section className="bg-gray-100 py-16 px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">Фото наших притисків</h2>
-        <p className="text-gray-600 mb-8">Реальні зображення ексцентрикових притисків виробництва WMS Service.</p>
+        <p className="text-gray-600 mb-8">
+          Реальні зображення ексцентрикових притисків виробництва WMS Service.
+        </p>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           <img src="/photo_2023-06-07_16-56-04.jpg" alt="Притиск 1" className="rounded-2xl shadow" />
           <img src="/111.jpg" alt="Притиск 2" className="rounded-2xl shadow" />
@@ -125,7 +165,7 @@ export default function App() {
       </section>
 
       {/* 🔹 Footer */}
-      <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-6 text-center text-sm shadow-inner border-t border-gray-700 animate-fadeIn">
+      <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-6 text-center text-sm shadow-inner border-t border-gray-700">
         <p className="transition duration-300 hover:text-yellow-400 hover:drop-shadow-[0_0_6px_rgba(255,255,150,0.5)]">
           © {new Date().getFullYear()} WMS Service
         </p>
