@@ -59,9 +59,21 @@ export default function App() {
       <section className="bg-yellow-400 text-gray-900 py-16 px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">Хочете дізнатися більше або зробити замовлення?</h2>
         <p className="mb-6">Телефонуйте або залишайте заявку — допоможемо підібрати притиск під ваш верстат.</p>
-        <a href="tel:+380501471036" className="inline-block bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl hover:bg-gray-800 transition">
-          📞 050-147-10-36
-        </a>
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
+  <a
+    href="tel:+380501471036"
+    className="inline-block bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl hover:bg-gray-800 transition"
+  >
+    📞 050-147-10-36
+  </a>
+  
+  <a
+    href="tel:+380684324203"
+    className="inline-block bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl hover:bg-gray-800 transition"
+  >
+    💬 068-432-42-03 <span className="text-sm text-gray-300">(Viber, Telegram)</span>
+  </a>
+</div>
       </section>
 
       {/* 🔹 Footer */}
