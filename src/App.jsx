@@ -59,30 +59,39 @@ export default function App() {
       <section className="bg-yellow-400 text-gray-900 py-16 px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">Хочете дізнатися більше або зробити замовлення?</h2>
         <p className="mb-6">Телефонуйте або залишайте заявку — допоможемо підібрати притиск під ваш верстат.</p>
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
+  {/* Основной телефон */}
   <a
     href="tel:+380501471036"
-    className="inline-block bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl hover:bg-gray-800 transition"
+    className="inline-flex items-center gap-2 bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl hover:bg-gray-800 transition"
   >
     📞 050-147-10-36
   </a>
-  
-  <a
-    href="tel:+380684324203"
-    className="inline-block bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl hover:bg-gray-800 transition"
-  >
-    💬 068-432-42-03 <span className="text-sm text-gray-300">(Viber, Telegram)</span>
-  </a>
-</div>
-      </section>
 
-      {/* 🔹 Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-6 text-center text-sm">
-        <p>© {new Date().getFullYear()} WMS Service, м. Харків</p>
-        <p className="mt-2">
-          Створено за підтримки <a href="https://gptonline.ai/" className="text-yellow-400 hover:underline">GPTOnline.ai</a>
-        </p>
-      </footer>
+  {/* Телефон с Viber и Telegram */}
+  <div className="inline-flex flex-col items-center sm:items-start">
+    <a
+      href="tel:+380684324203"
+      className="inline-flex items-center gap-2 bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl hover:bg-gray-800 transition"
+    >
+      💬 068-432-42-03
+    </a>
+    <div className="flex justify-center sm:justify-start gap-3 mt-2">
+      <a
+        href="viber://chat?number=%2B380684324203"
+        className="text-gray-700 hover:text-purple-500 transition font-medium"
+      >
+        📱 Viber
+      </a>
+      <span className="text-gray-500">•</span>
+      <a
+        href="https://t.me/+380684324203"
+        className="text-gray-700 hover:text-blue-500 transition font-medium"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ✈️ Telegram
+      </a>
     </div>
-  );
-}
+  </div>
+</div>
