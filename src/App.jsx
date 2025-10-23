@@ -1,13 +1,26 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800">
-      {/* Hero Section */}
+      
+      {/* 🔹 Меню навігації */}
+      <nav className="bg-gray-900 text-white py-4">
+        <div className="container mx-auto flex justify-center space-x-6">
+          <Link to="/" className="hover:text-yellow-400">Головна</Link>
+          <Link to="/about" className="hover:text-yellow-400">Про компанію</Link>
+        </div>
+      </nav>
+
+      {/* 🔹 Hero Section */}
       <section className="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-20 px-6 text-center">
-        <h1 className="text-4xl font-bold mb-4">Ексцентрикові притиски для форматно-розкрійних верстатів</h1>
+        <h1 className="text-4xl font-bold mb-4">
+          Ексцентрикові притиски для форматно-розкрійних верстатів
+        </h1>
         <p className="text-lg mb-6 max-w-2xl mx-auto">
-          Надійне фіксування заготовки. Максимальна точність розкрою. Висока якість притисків від <span className="font-semibold">WMS Service</span>.
+          Надійне фіксування заготовки. Максимальна точність розкрою. 
+          Висока якість притисків від <span className="font-semibold">WMS Service</span>.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
           <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold px-6 py-3 rounded-2xl transition">
@@ -19,7 +32,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Features */}
+      {/* 🔹 Features */}
       <section className="py-16 px-6 max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center">
         <div>
           <h3 className="text-xl font-semibold mb-2">🎯 Точне фіксування</h3>
@@ -35,7 +48,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Gallery */}
+      {/* 🔹 Gallery */}
       <section className="bg-gray-100 py-16 px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">Фото наших притисків</h2>
         <p className="text-gray-600 mb-8">Реальні зображення ексцентрикових притисків виробництва WMS Service.</p>
@@ -48,7 +61,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* 🔹 CTA */}
       <section className="bg-yellow-400 text-gray-900 py-16 px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">Хочете дізнатися більше або зробити замовлення?</h2>
         <p className="mb-6">Телефонуйте або залишайте заявку — допоможемо підібрати притиск під ваш верстат.</p>
@@ -57,11 +70,13 @@ export default function App() {
         </a>
       </section>
 
-      {/* Footer */}
+      {/* 🔹 Footer */}
       <footer className="bg-gray-900 text-gray-400 py-6 text-center text-sm">
         <p>© {new Date().getFullYear()} WMS Service, м. Харків</p>
-        <p className="mt-2">Створено за підтримки <a href="https://gptonline.ai/" className="text-yellow-400 hover:underline">GPTOnline.ai</a></p>
+        <p className="mt-2">
+          Створено за підтримки <a href="https://gptonline.ai/" className="text-yellow-400 hover:underline">GPTOnline.ai</a>
+        </p>
       </footer>
     </div>
-  )
+  );
 }
