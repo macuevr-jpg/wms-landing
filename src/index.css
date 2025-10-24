@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===========================
-   🔹 Глобальные стили сайта
-   =========================== */
-
+/* ==========================
+   🔹 Глобальные стили
+   ========================== */
 body {
   @apply bg-gray-50 text-gray-800;
   -webkit-font-smoothing: antialiased;
@@ -18,14 +17,14 @@ a {
   @apply transition duration-300 ease-in-out;
 }
 
+/* Карточки */
 .card {
   @apply bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition transform hover:-translate-y-1;
 }
 
-/* ===========================
-   🔹 Анимации
-   =========================== */
-
+/* ==========================
+   🔹 Анимация
+   ========================== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -41,33 +40,9 @@ a {
   animation: fadeIn 1s ease-out forwards;
 }
 
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in-section.animate-fadeIn {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===========================
-   🔹 Hero Section
-   =========================== */
-
-.hero-title {
-  @apply text-4xl font-bold mb-4 text-white;
-}
-
-.hero-subtitle {
-  @apply text-lg mb-6 text-gray-200 max-w-2xl mx-auto;
-}
-
-/* ===========================
+/* ==========================
    🔹 Кнопки
-   =========================== */
-
+   ========================== */
 .btn-primary {
   @apply bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold px-6 py-3 rounded-2xl transition shadow-md hover:shadow-yellow-300/50;
 }
@@ -75,10 +50,6 @@ a {
 .btn-outline {
   @apply bg-transparent border border-yellow-400 text-yellow-400 px-6 py-3 rounded-2xl hover:bg-yellow-500 hover:text-gray-900 transition shadow-md hover:shadow-yellow-300/40;
 }
-
-/* ===========================
-   🔹 Контакти
-   =========================== */
 
 .contact-btn {
   @apply inline-flex items-center gap-2 bg-gray-900 text-yellow-400 font-semibold px-8 py-3 rounded-2xl shadow-lg transition transform hover:scale-105 hover:text-yellow-300;
@@ -88,16 +59,11 @@ a {
   box-shadow: 0 0 15px rgba(255, 230, 100, 0.4);
 }
 
-/* ===========================
+/* ==========================
    🔹 Footer
-   =========================== */
-
+   ========================== */
 footer {
   @apply bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 text-sm py-6 text-center border-t border-gray-700;
-}
-
-footer p {
-  @apply transition duration-300;
 }
 
 footer p:hover {
